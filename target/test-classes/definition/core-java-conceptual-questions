@@ -284,7 +284,11 @@ JUnit is a framework that is open-source and may be used to write and trigger te
 framework that provides an improved way to run tests. Advanced annotation is not supported.
 It is capable of supporting more advanced annotation.
 
-What are the dependencies for this project?*******************************************
+What are the dependencies for this project?
+A module dependency represents a dependency on a module with a specific version built outside the current build.
+Modules are usually stored in a repository, such as Maven Central, a corporate Maven or Ivy repository, or a
+directory in the local file system
+
 what is dependency injection in java?
 Dependency Injection in Java is a way to achieve Inversion of control (IoC) in our application by moving objects
 binding from compile time to runtime. We can achieve IoC through Factory Pattern, Template Method Design Pattern,

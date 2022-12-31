@@ -9,7 +9,9 @@ public class Sort {
 	 */
 
 
+
     public int[] selectionSort(int [] array){
+        //https://www.youtube.com/watch?v=cqh8nQwuKNE
         final long startTime = System.currentTimeMillis();
         int [] list = array;
 
@@ -35,7 +37,17 @@ public class Sort {
         final long startTime = System.currentTimeMillis();
         int [] list = array;
         //implement here
+        //https://www.youtube.com/watch?v=nKzEJWbkPbQ
+        for (int j = 1; j < array.length; j++) {
+            int c = array[j];
+            int i = j - 1;
 
+            while (i >= 0 && array[i] > c) {
+                array[i + 1] = array[i];
+                i = i --;
+            }
+            array[i + 1] = c;
+        }
 
 
         final long endTime = System.currentTimeMillis();
@@ -47,7 +59,14 @@ public class Sort {
     public int[] bubbleSort(int [] array){
         int [] list = array;
         //implement here
-
+        for (int j = 0; j < array.length-1; j++)
+            for (int i = 0; i < array.length-j-1; i++)
+                if (array[i] > array[i+1])
+                {
+                    int c = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = c;
+                }
         
         
         return list;

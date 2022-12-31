@@ -2,7 +2,7 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo {
+public class EmployeeInfo implements Employee {
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
@@ -58,23 +58,56 @@ public class EmployeeInfo {
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
-	public static int calculateEmployeePension(){
-		int total=0;
-		Scanner sc  = new Scanner(System.in);
+	public static int calculateEmployeePension() {
+		int total = 0;
+		Scanner sc = new Scanner(System.in);
 		System.out.println("Please enter start date in format (example: May,2015): ");
 		String joiningDate = sc.nextLine();
 		System.out.println("Please enter today's date in format (example: August,2017): ");
 		String todaysDate = sc.nextLine();
-        String convertedJoiningDate = DateConversion.convertDate(joiningDate);
-        String convertedTodaysDate = DateConversion.convertDate(todaysDate);
+		String convertedJoiningDate = DateConversion.convertDate(joiningDate);
+		String convertedTodaysDate = DateConversion.convertDate(todaysDate);
 
-        //implement numbers of year from above two dates
+		//implement numbers of year from above two dates
 		//Calculate pension
 
 
-
-		return total;
+		return 0;
 	}
+		public int employeeId () {
+			return 0;
+		}
+
+
+
+	public String employeeName() {
+		String employeeName = "Fariza";
+		return employeeName;
+	}
+
+
+	public void assignDepartment() {
+System.out.println("NY");
+	}
+
+
+	public int calculateSalary() {
+		int calculateSlary = 5000;
+		return calculateSlary;
+	}
+
+
+	public void benefitLayout() {
+
+	}
+	//belong to EmployeeInfo class
+public void EmployeeLastName(){
+System.out.println("Tadjadit");
+}
+	public void EmployeeDateOfBirth() {
+		System.out.println("June 24");
+	}
+
 	private static class DateConversion {
 
 		public DateConversion(Months months){}
