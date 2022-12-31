@@ -3,7 +3,7 @@ package datastructure;
 import java.util.*;
 
 public class UseMap {
-//https://www.chegg.com/homework-help/questions-and-answers/package-datastructure-public-class-usemap-public-static-void-main-string-args-demonstrate--q58854088
+
 	public static void main(String[] args) {
 		/*
 		 * Demonstrate how to use Map that includes storing and retrieving elements.
@@ -20,7 +20,7 @@ public class UseMap {
 
 		System.out.println(map);
 
-		System.out.println(map.get("s1"));
+		System.out.println("Retrieve" + map.get("s1"));
 
 
 		ArrayList<String> str = new ArrayList<>();
@@ -32,32 +32,43 @@ public class UseMap {
 
 		//List<String> List = new HashMap<String, List<String>>();
 		Map<String, List<String>> map1 = new HashMap<String, List<String>>();
-		map1.put("classification ",str);
-System.out.println(map1);
+		map1.put("classification ", str);
+		System.out.println(map1);
 		//Use For Each loop and while loop with Iterator to retrieve data.
 		//for each loop:
 		System.out.println("With for each loop: ");
-		for(Map.Entry<String, String> s : map.entrySet()) {
+
+		for (Map.Entry<String, String> s : map.entrySet()) {
 			System.out.println(map);
 		}
-		System.out.println("With for each loop: ");
+
+//or
+		/*System.out.println("With for each loop: ");
 		Set<Map.Entry<String, String>> entrySet = map.entrySet();
 		for (Map.Entry<String, String> entry : entrySet) {
-			System.out.println(entry.getKey());
-			System.out.println(entry.getValue());
+			System.out.println("key is: " + entry.getKey() + " and value is " + entry.getValue());
+			System.out.println();*/
+
+
+
+			//While loop
+
+			System.out.println("With while loop : ");
+		Set<Map.Entry<String, String>> entrySet = map.entrySet();
+		Iterator it = entrySet.iterator();
+
+		while (it.hasNext()) {
+				Map.Entry me = (Map.Entry) it.next();
+				System.out.println("Key is: " + me.getKey() + " and value is: " + me.getValue());
+				//Iterator<Map.Entry<String, String>> it
+				//Iterator<String> it = list.iterator();
+				//while(it.hasNext()) {
+
+				//System.out.println(it.next());
+			}
 		}
-		//for(String s :str) {
-			//System.out.println(s);
-		//While loop
-		System.out.println("With while loop : ");
-		//Iterator<String> it = list.iterator();
-		//while(it.hasNext()) {
-
-			//System.out.println(it.next());
-
-
-
-
 	}
 
-}
+
+
+

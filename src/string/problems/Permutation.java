@@ -13,7 +13,7 @@ public class Permutation {
      * Write Java program to compute all Permutation of a String
      *
      */
-    private void calculate(String str, int left, int right) {
+     void calculate(String str, int left, int right) {
         if (left == right) {
             System.out.println(str);
         } else {
