@@ -77,8 +77,8 @@ public class Sort {
     }
     
 
-    public int [] mergeSort(int [] array){
-        int [] list = array;
+    public int [] mergeSort(int [] array) {
+        int[] list = array;
         //implement here
         final long startTime = System.currentTimeMillis();
         if (array.length < 2) {
@@ -90,11 +90,12 @@ public class Sort {
         for (int i = 0; i < c; i++) {
             l[i] = array[i];
         }
-        for (int i = c; i < array.length; i++) {R[i - c] = array[i];
+        for (int i = c; i < array.length; i++) {
+            R[i - c] = array[i];
         }
         mergeSort(l);
         mergeSort(R);
-        //merge(array, l, R, c, array.length - c);
+    //mergeSort(array, l, R, c, array.length - c);
 
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
