@@ -11,7 +11,7 @@ public class Sort {
 
 
     public int[] selectionSort(int [] array){
-        //https://www.youtube.com/watch?v=cqh8nQwuKNE
+
         final long startTime = System.currentTimeMillis();
         int [] list = array;
 
@@ -59,6 +59,7 @@ public class Sort {
     public int[] bubbleSort(int [] array){
         int [] list = array;
         //implement here
+        final long startTime = System.currentTimeMillis();
         for (int j = 0; j < array.length-1; j++)
             for (int i = 0; i < array.length-j-1; i++)
                 if (array[i] > array[i+1])
@@ -67,17 +68,37 @@ public class Sort {
                     array[i] = array[i+1];
                     array[i+1] = c;
                 }
-        
-        
+
+        final long endTime = System.currentTimeMillis();
+        final long executionTime = endTime - startTime;
+        this.executionTime = executionTime;
         return list;
+
     }
     
 
     public int [] mergeSort(int [] array){
         int [] list = array;
         //implement here
-        
-        
+        final long startTime = System.currentTimeMillis();
+        if (array.length < 2) {
+            return array;
+        }
+        int c = array.length / 2;
+        int[] l = new int[c];
+        int[] R = new int[array.length - c];
+        for (int i = 0; i < c; i++) {
+            l[i] = array[i];
+        }
+        for (int i = c; i < array.length; i++) {R[i - c] = array[i];
+        }
+        mergeSort(l);
+        mergeSort(R);
+        //merge(array, l, R, c, array.length - c);
+
+        final long endTime = System.currentTimeMillis();
+        final long executionTime = endTime - startTime;
+        this.executionTime = executionTime;
 
         return list;
     }
